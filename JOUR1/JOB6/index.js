@@ -1,13 +1,6 @@
-const fs = require('fs').promises; // 'fs.promises' pour utiliser la version Promise de 'fs'
-const path = require('path'); 
+const fs = require('fs');
 
-const filePath = '../OneDrive/Documents/LA-PLATEFORME/runtrack-nodeJS/JOUR1/JOB5';
+// FACON SYNCHRONE
+const fileContent = fs.readFileSync('data.txt', 'utf-8');
 
-const fileName = path.basename(filePath);
-console.log('Nom du fichier :', fileName);
-
-const fileExt = path.extname(filePath);
-console.log('Extension du fichier :', fileExt);
-
-const parentDir = path.dirname(filePath);
-console.log('Répertoire parent :', parentDir);
+console.log('Contenu du fichier data.txt :', fileContent);

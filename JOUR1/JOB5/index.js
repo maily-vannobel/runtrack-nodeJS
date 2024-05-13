@@ -1,7 +1,7 @@
 const fs = require('fs').promises; // 'fs.promises' pour utiliser la version Promise de 'fs'
 const path = require('path'); 
 
-const filePath = '../OneDrive/Documents/LA-PLATEFORME/runtrack-nodeJS/JOUR1/JOB5';
+const filePath = '../JOB5/index.js';
 
 const fileName = path.basename(filePath);
 console.log('Nom du fichier :', fileName);
