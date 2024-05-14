@@ -1,4 +1,4 @@
 // POINT D'ENTRÉE DE L'API
 
-// index.js
-require('./server');
+import './server.js';
+import '.routes.js';
