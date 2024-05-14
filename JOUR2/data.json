@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "titre": "Acheter du lait",
+      "description": "Ceci est la description de la première tâche.",
+      "completed": "false"
+    },
+    {
+      "id": 2,
+      "titre": "Appeller plombier",
+      "description": "Prendre RDV avec le plombier pour réparer robinet.",
+      "completed": "true"
+    },
+    {
+      "id": 3,
+      "titre": "Faire la lessive",
+      "description": "Laver les vêtements et les draps",
+      "completed": "false"
+    }
+  ]
+  
