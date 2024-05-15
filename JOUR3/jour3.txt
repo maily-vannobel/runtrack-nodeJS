@@ -1,0 +1,16 @@
+job01
+["Installer MongoDB"]
+
+job02
+["Afficher l’ensemble des bases de données présentes
+dans Compass."
+Résultats dans le terminal:
+show dbs
+admin   40.00 KiB
+config  72.00 KiB
+local   40.00 KiB]
+
+job03 
+["Avec le terminal MongoSH: créer une base de données "shop"]
+
+
