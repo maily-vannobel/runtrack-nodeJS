@@ -52,9 +52,37 @@ Commande: > db.product.insertOne({
                 "quantity": 6})
 Résultat: < { acknowledged: true,
              insertedId: ObjectId('6644b8100d13f7ba4689619f')}
-
 ]
 
+JOB05 
+[Créer nouvelle collection 'category' (avec 3 documents; des catégories) documents: name ⇒ “Pantalon noir”, description ⇒ “Un pantalon noir”, price ⇒ 14,99,
+
+Commande: >db.createCollection("category")
+Résultat: < { ok: 1 }
+
+Commande: >db.category.insertMany([
+            {"name": "Habits" },
+            {"name": "Accessoires" },
+            {"name": "Chaussures" }
+    ])
+
+Résultat: <  {acknowledged: true,
+              insertedIds: { '0': ObjectId('6644beb70d13f7ba468961a0'),
+              '1': ObjectId('6644beb70d13f7ba468961a1'),
+              '2': ObjectId('6644beb70d13f7ba468961a2')  }}
+]
+
+JOB06 ["Afficher l’ensemble des collections de la base de données."
+
+Commande: >show collections
+Résultat: <category
+           product
+]
+
+
+
+
+]
 
 
 
