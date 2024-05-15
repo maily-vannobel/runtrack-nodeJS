@@ -31,7 +31,29 @@ Résultat: <  { acknowledged: true,
                insertedId: ObjectId('6644b3790d13f7ba4689619d')}
 ]
 
-JOB04
+JOB04 
+ [Ajouter à la collection 'product' ces documents: name ⇒ “Pantalon noir”, description ⇒ “Un pantalon noir”, price ⇒ 14,99,
+quantity ⇒ 12 ET name ⇒ “chaussettes”, description ⇒ “chaussettes cool !”, price ⇒ 6,
+quantity ⇒ 6
+
+Commande: > db.product.insertOne({
+                "name": "Pantalon noir",
+                "description": "Un pantalon noir",
+                "price": 19.99,
+                "quantity": 12
+})
+Résultat: < {acknowledged: true,
+           insertedId: ObjectId('6644b7de0d13f7ba4689619e')}
+
+Commande: > db.product.insertOne({
+                "name": "Chaussettes",
+                "description": "Des chaussettes cool",
+                "price": 6,
+                "quantity": 6})
+Résultat: < { acknowledged: true,
+             insertedId: ObjectId('6644b8100d13f7ba4689619f')}
+
+]
 
 
 
