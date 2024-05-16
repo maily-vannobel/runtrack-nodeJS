@@ -72,20 +72,111 @@ Résultat: <  {acknowledged: true,
               '2': ObjectId('6644beb70d13f7ba468961a2')  }}
 ]
 
-JOB06 ["Afficher l’ensemble des collections de la base de données."
-
+JOB06 
+["Afficher l’ensemble des collections de la base de données."
 Commande: >show collections
 Résultat: <category
            product
 ]
 
-
-
-
+JOB07 
+["Récupérer l’ensemble des données de la collections 'category' "
+Commande: >db.category.find()
+Résultat: < { _id: ObjectId('6644beb70d13f7ba468961a0'),
+              name: 'Habits'}
+              { _id: ObjectId('6644beb70d13f7ba468961a1'),
+              name: 'Accessoires'}
+              { _id: ObjectId('6644beb70d13f7ba468961a2'),
+              name: 'Chaussures'}
 ]
 
+JOB08 
+["Requête permettant d’afficher seulement 2 catégories.
+Commande: >db.category.find().limit(2)
+Résultat: >  { _id: ObjectId('6644beb70d13f7ba468961a0'),
+              name: 'Habits'}
+              { _id: ObjectId('6644beb70d13f7ba468961a1'),
+              name: 'Accessoires'}
+]
 
+JOB09 
+["requête qui récupère produits classés par prix croissant"
+Commande: > db.product.find().sort({ price: 1 })
+ Résultat: <         { _id: ObjectId('6644b8100d13f7ba4689619f'),
+                        name: 'Chaussettes',
+                        description: 'Des chaussettes cool',
+                        price: 6,
+                        quantity: 6}
+                      { _id: ObjectId('6644b7de0d13f7ba4689619e'),
+                        name: 'Pantalon noir',
+                        description: 'Un pantalon noir',
+                        price: 19.99,
+                        quantity: 12}
+                      { _id: ObjectId('6644b3790d13f7ba4689619d'),
+                              name: 'chaussure',
+                              description: 'une paire de chaussures',
+                              price: 35,
+                              quantity: 120}
+]
 
+JOB10
+["Requête qui récupère produits classés par prix décroissant"
+Commande: >db.product.find().sort({ price: -1 })
+Résultat: <{ _id: ObjectId('6644b3790d13f7ba4689619d'),
+              name: 'chaussure',
+              description: 'une paire de chaussures',
+              price: 35,
+              quantity: 120}
+              { _id: ObjectId('6644b7de0d13f7ba4689619e'),
+                name: 'Pantalon noir',
+                description: 'Un pantalon noir',
+                price: 19.99,
+                quantity: 12}
+              { _id: ObjectId('6644b8100d13f7ba4689619f'),
+                name: 'Chaussettes',
+                description: 'Des chaussettes cool',
+                price: 6,
+                quantity: 6}
+]
 
+JOB11
+["Requête qui  recup les produits ayant un prix
+supérieur à 5euros et un stock inférieur à 100."
+Commande: > db.product.find({ price: { $gt: 5 }, quantity: { $lt: 100 } })
+Résultat: < { _id: ObjectId('6644b7de0d13f7ba4689619e'),
+              name: 'Pantalon noir',
+              description: 'Un pantalon noir',
+              price: 19.99,
+              quantity: 12}
+              { _id: ObjectId('6644b7de0d13f7ba4689619e'),
+                name: 'Pantalon noir',
+                description: 'Un pantalon noir',
+                price: 19.99,
+                quantity: 12}
+                { _id: ObjectId('6644b8100d13f7ba4689619f'),
+                  name: 'Chaussettes',
+                  description: 'Des chaussettes cool',
+                  price: 6,
+                  quantity: 6}
+]
+JOB12
+["Requête qui  recup les produits ayant un prix
+supérieur à 14.99e et un stock supérieur à 100."
+Commande: >db.product.find({$or : [{price : {$gt : 14.99 }}, {quantity : {$gt : 100}}]})
+Résultat: < { _id: ObjectId('6644b3790d13f7ba4689619d'),
+              name: 'chaussure',
+              description: 'une paire de chaussures',
+              price: 35,
+              quantity: 120}
+              { _id: ObjectId('6644b7de0d13f7ba4689619e'),
+                name: 'Pantalon noir',
+                description: 'Un pantalon noir',
+                price: 19.99,
+                quantity: 12}
+]
+
+JOB13
+"Récupérer l’ensemble des produits sans leurs id."
+Commande : >db.product.find({}, {_id : 0 })
 
 
